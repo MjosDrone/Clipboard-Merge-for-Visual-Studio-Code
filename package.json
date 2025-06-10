@@ -1,0 +1,76 @@
+{
+  "name": "external-clipboard-merge",
+  "displayName": "External Clipboard Merge",
+  "description": "Opens an external merge tool to compare the active editor content with the clipboard content.",
+  "version": "0.1.0",
+  "publisher": "Mjosdrone",
+  "license": "MIT",
+  "author": {
+    "name": "Alexis Pujo"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:externalMerge.trigger"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "externalMerge.trigger",
+        "title": "Merge Active File with Clipboard in External Tool"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "externalMerge.trigger",
+        "key": "ctrl+alt+m",
+        "mac": "cmd+alt+m"
+      }
+    ],
+    "configuration": {
+      "title": "External Clipboard Merge",
+      "properties": {
+        "externalMerge.toolPath": {
+          "type": "string",
+          "default": "",
+          "description": "Full path to the external merge tool executable (e.g., C:\\Program Files\\Beyond Compare 4\\BCompare.exe or /usr/bin/meld)."
+        },
+        "externalMerge.toolArguments": {
+          "type": "string",
+          "default": "\"{filePath1}\" \"{filePath2}\" /output=\"{outputFilePath}\"",
+          "description": "Command line arguments for the merge tool. Use placeholders: {filePath1} (active editor), {filePath2} (clipboard content), {outputFilePath} (where merged content should be saved). Adjust for your tool."
+        },
+        "externalMerge.useThreeWayMergeIfBaseProvided": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, and a base file argument {baseFilePath} is included in toolArguments, the original active editor file will be copied to a temporary location to act as the base. Tool arguments should then be like: {baseFilePath} {filePath1_modified_temp} {filePath2_clipboard_temp} /output=\"{outputFilePath_final}\""
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "vsix": "npm run package && vsce package",
+    "lint": "eslint src --ext ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.54.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
