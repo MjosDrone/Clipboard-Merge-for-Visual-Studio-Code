@@ -1,7 +1,7 @@
 <table>
   <tr>
     <td width="128" align="center">
-      <img src="https://github.com/MjosDrone/Clipboard-Merge-for-Visual-Studio/blob/main/docs/clipboard-merge-for-visual-studio-code-icon.png?raw=true" alt="Extension icon">
+      <img src="https://github.com/MjosDrone/Clipboard-Merge-for-Visual-Studio-Code/blob/main/docs/clipboard-merge-for-visual-studio-code-icon.png?raw=true" alt="Extension icon">
     </td>
     <td>
       <h1>External Merge for Visual Studio Code</h1>
