@@ -2,7 +2,7 @@
   "name": "clipboard-merge-for-visual-studio-code",
   "displayName": "External Clipboard Merge for VS Code",
   "description": "Opens an external merge tool to compare the active editor content with the clipboard content.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "MjosDrone",
   "license": "MIT",
   "icon": "./docs/clipboard-merge-for-visual-studio-code-icon.png",
