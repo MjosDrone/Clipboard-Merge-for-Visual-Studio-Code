@@ -1,10 +1,23 @@
 {
-  "name": "external-clipboard-merge",
-  "displayName": "External Clipboard Merge",
+  "name": "clipboard-merge-for-visual-studio-code",
+  "displayName": "External Clipboard Merge for VS Code",
   "description": "Opens an external merge tool to compare the active editor content with the clipboard content.",
-  "version": "0.1.0",
-  "publisher": "Mjosdrone",
+  "version": "0.1.1",
+  "publisher": "MjosDrone",
   "license": "MIT",
+  "icon": "./docs/clipboard-merge-for-visual-studio-code-icon.png",
+  "galleryBanner": {
+    "color": "#333333",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MjosDrone/Clipboard-Merge-for-Visual-Studio-Code.git"
+  },
+  "homepage": "https://github.com/MjosDrone/Clipboard-Merge-for-Visual-Studio-Code#readme",
+  "bugs": {
+    "url": "https://github.com/MjosDrone/Clipboard-Merge-for-Visual-Studio-Code/issues"
+  },
   "author": {
     "name": "Alexis Pujo"
   },
@@ -12,7 +25,8 @@
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Keymaps"
   ],
   "activationEvents": [
     "onCommand:externalMerge.trigger"
@@ -33,7 +47,7 @@
       }
     ],
     "configuration": {
-      "title": "External Clipboard Merge",
+      "title": "External Clipboard Merge for VS Code",
       "properties": {
         "externalMerge.toolPath": {
           "type": "string",
